@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Website template by freewebsitetemplates.com -->
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -33,7 +32,6 @@
 			z-index: 999;
 		}
 
-		/* Input Box Styling */
 		#popupInput {
 			width: 90%;
 			padding: 10px;
@@ -60,7 +58,6 @@
 				transform: scale(1.05);
 			}
 
-		/* Animation for Great Choice Popup */
 		#greatChoicePopup {
 			animation: fadeIn 0.5s ease-in-out;
 		}
@@ -77,15 +74,68 @@
 			}
 		}
 
-		/* Logo Styling */
 		#logo img {
 			width: 250px;
 			height: auto;
 		}
+
+		/* Gallery Styles */
+		.gallery {
+			display: none; /* Initially hidden */
+			margin-top: 50px;
+			text-align: center;
+		}
+
+			.gallery img {
+				display: none;
+				max-width: 90%;
+				height: auto;
+				border: 2px solid #333;
+				border-radius: 10px;
+				box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+			}
+
+				.gallery img.active {
+					display: block;
+					margin: 0 auto;
+				}
+
+			.gallery button {
+				background-color: #2a9d8f;
+				color: white;
+				padding: 10px 20px;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				font-size: 16px;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+				margin-top: 20px;
+			}
+
+				.gallery button:hover {
+					background-color: #e76f51;
+				}
+
+		#showGalleryButton {
+			margin-top: 50px;
+			background-color: #264653;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+			#showGalleryButton:hover {
+				background-color: #e76f51;
+			}
 	</style>
 </head>
 <body onload="showPopup()">
-	<!-- Popup triggers on page load -->
 	<div id="popupOverlay"></div>
 	<div id="popupContainer">
 		<h3>Welcome to Dream Automotive! We'd love to know, what’s your favorite car?</h3>
@@ -100,8 +150,7 @@
 
 	<div class="page">
 		<div class="header">
-			<!-- Updated Logo -->
-			<a href="#" id="logo"><img src="images/Dream_Logo_SCALED.webp" alt="Dream Car Garage Logo"></a>
+			<a href="index.html" id="logo"><img src="images/Dream_Logo_SCALED.webp" alt="Dream Car Garage Logo"></a>
 			<div class="featured">
 				<h2>Heaven for Car Enthusiasts!</h2>
 				<p>
@@ -113,23 +162,28 @@
 		<div class="body">
 			<div class="content">
 				<h1>Fall in love with cars!</h1>
-				<!-- Embedded YouTube Video -->
-				<iframe width="640"
-						height="360"
-						src="https://www.youtube.com/embed/nKhtT3w8DUs"
-						title="YouTube video player"
-						frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-						allowfullscreen>
-				</iframe>
+				<iframe width="640" height="360" src="https://www.youtube.com/embed/nKhtT3w8DUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				<p>
-					At Dream Car Garage, we celebrate the art and engineering behind the world’s most breathtaking vehicles. From sleek sports cars to powerful classics, every model tells a story of passion and innovation. Explore our curated collection and let your love for cars ignite your imagination. Whether you’re a car enthusiast or a casual admirer, there's something here for everyone to enjoy!
+					At Dream Car Garage, we celebrate the art and engineering behind the world’s most breathtaking vehicles. From sleek sports cars to powerful classics, every model tells a story of passion and innovation.
 				</p>
 				<p>
-					Experience the thrill of driving like never before with Dream Car Garage. Dive into the world of automotive excellence, where style meets performance. Discover iconic models, learn about cutting-edge innovations, and fuel your passion for cars. Join us on this journey to celebrate the beauty and power of extraordinary vehicles!
+					Explore our curated collection and let your love for cars ignite your imagination. Whether you’re a car enthusiast or a casual admirer, there's something here for everyone to enjoy!
 				</p>
 			</div>
 		</div>
+
+		<!-- Button to Show Gallery -->
+		<button id="showGalleryButton" onclick="showGallery()">Gallery</button>
+
+		<!-- Gallery Section -->
+		<div class="gallery">
+			<img src="images/car1.jpg" alt="Car 1" class="active">
+			<img src="images/car2.jpg" alt="Car 2">
+			<img src="images/car3.jpg" alt="Car 3">
+			<img src="images/car4.jpg" alt="Car 4">
+			<button onclick="nextImage()">Next Image</button>
+		</div>
+
 		<div class="footer">
 			<p>
 				&#169; 2023. Dream Automotive | Student ID: [23229502], Name: Abrer Rahat Hossain
@@ -138,33 +192,40 @@
 	</div>
 
 	<script>
-		// Show popup when the page loads
 		function showPopup() {
 			document.getElementById("popupContainer").style.display = "block";
 			document.getElementById("popupOverlay").style.display = "block";
 		}
 
-		// Handle popup submission
 		function submitDreamCar() {
 			const dreamCar = document.getElementById("popupInput").value;
 			if (dreamCar.trim() === "") {
 				alert("Please enter a car name.");
 			} else {
-				// Hide the initial popup
 				document.getElementById("popupContainer").style.display = "none";
 				document.getElementById("popupOverlay").style.display = "none";
 
-				// Show "Great choice!" popup
 				setTimeout(() => {
 					const greatChoicePopup = document.getElementById("greatChoicePopup");
 					greatChoicePopup.style.display = "block";
-
-					// Hide "Great Choice!" popup after 5 seconds
 					setTimeout(() => {
 						greatChoicePopup.style.display = "none";
-					}, 5000); // 5-second delay
+					}, 5000);
 				}, 500);
 			}
+		}
+
+		let currentImageIndex = 0;
+		const images = document.querySelectorAll('.gallery img');
+
+		function nextImage() {
+			images[currentImageIndex].classList.remove('active');
+			currentImageIndex = (currentImageIndex + 1) % images.length;
+			images[currentImageIndex].classList.add('active');
+		}
+
+		function showGallery() {
+			document.querySelector('.gallery').style.display = 'block';
 		}
 	</script>
 </body>
