@@ -84,7 +84,7 @@ a {
 			}
 
 			.header ul li a {
-				font-family: 'Creepster', cursive;
+				font-family: 'Oswald', sans-serif; /* Change to the desired font */
 				font-size: 18px;
 				line-height: 24px;
 				color: #ff4500;
