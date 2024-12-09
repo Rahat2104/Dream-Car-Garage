@@ -4,9 +4,36 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Car Racing Website Template</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/style.original.css" type="text/css">
+	<style>
+		/* Description Paragraph Style */
+		.description {
+			position: fixed; /* Stays at the top */
+			top: 0;
+			left: 0;
+			width: 100%; /* Takes the full width of the screen */
+			background-color: #2a2a2a; /* Dark background */
+			color: #f5f5f5; /* Light text */
+			font-family: Arial, Helvetica, sans-serif;
+			padding: 10px 20px;
+			text-align: center;
+			border-bottom: 2px solid #b11212;
+			z-index: 1000; /* Ensures it's above other content */
+		}
+
+		/* Adjust the page content to account for the fixed paragraph */
+		.page {
+			margin-top: 70px; /* Adjust this value to match the height of the paragraph */
+		}
+	</style>
 </head>
 <body>
+	<!-- Description Paragraph -->
+	<div class="description">
+        <p>
+            This version retains its original functionality for reference. This website includes a button "VISIT MY MODIFIED WEBSITE" to redirect to the modified version where I implemented new features using CSS and Java Script to match the grading criteria.
+        </p>
+	</div>
 
 	<div class="page">
 		<div class="header">
