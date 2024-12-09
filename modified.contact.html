@@ -3,34 +3,33 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>News - Car Racing Website Template</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<title>Contact - Car Racing Website Template</title>
+	<link rel="stylesheet" href="css/style.original.css" type="text/css">
 </head>
 <body>
 	<div class="page">
-		<div class="header header-news">
+		<div class="header header-contact">
 			<a href="index.html" id="logo"><img src="images/logo.png" alt="logo"></a>
 			<ul>
 				<li>
-					<a href="modified.index.html">Home</a> <span>This is just a placeholder</span>
+					<a href="index.html">Home</a> <span>This is just a placeholder</span>
 				</li>
 				<li>
 					<a href="about.html">About</a> <span>This is just a placeholder</span>
 				</li>
-				<li class="selected">
+				<li>
 					<a href="news.html">News</a> <span>This is just a placeholder</span>
 				</li>
-				<li>
+				<li class="selected">
 					<a href="contact.html">Contact</a> <span>This is just a placeholder</span>
 				</li>
 			</ul>
 			<div class="featured">
-				<h4>Featured news :</h4>
-				<h3>Placeholder Title One</h3>
+				<h4>You can replace content here:</h4>
+				<h3>Contact Us!</h3>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus lacus lorem. Nulla pellentesque, ipsum vel sodales convallis, nisl lacus pulvinar massa, ac elementum orci orci at enim. Nulla mattis, ante non gravida viverra, ante nulla laoreet massa, id molestie ipsum lorem eget quam. Sed semper
 				</p>
-				<a href="about.html"></a>
 			</div>
 		</div>
 		<div class="body">
@@ -84,39 +83,37 @@
 					</div>
 				</div>
 			</div>
-			<div class="content">
-				<ul>
-					<li>
-						<span>July 20, 2012</span> <a href="#"><img src="images/racer2.jpg" alt=""></a>
-						<div>
-							<h3>News Title One</h3>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dictum vehicula dolor in sodales. Phasellus in est erat, non porta nisi. Nam ut vestibulum velit. Donec nec felis eu sapien faucibus laoreet in non
-							</p>
-							<a href="#">Read more &#62;&#62;</a>
-						</div>
-					</li>
-					<li>
-						<span>July 20, 2012</span> <a href="#"><img src="images/racing-car.jpg" alt=""></a>
-						<div>
-							<h3>News Title One</h3>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dictum vehicula dolor in sodales. Phasellus in est erat, non porta nisi. Nam ut vestibulum velit. Donec nec felis eu sapien faucibus laoreet in non
-							</p>
-							<a href="#">Read more &#62;&#62;</a>
-						</div>
-					</li>
-					<li>
-						<span>July 20, 2012</span> <a href="#"><img src="images/crowd.jpg" alt=""></a>
-						<div>
-							<h3>News Title One</h3>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dictum vehicula dolor in sodales. Phasellus in est erat, non porta nisi. Nam ut vestibulum velit. Donec nec felis eu sapien faucibus laoreet in non
-							</p>
-							<a href="#">Read more &#62;&#62;</a>
-						</div>
-					</li>
-				</ul>
+			<div class="content contact">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus lacus lorem. Nulla pellentesque, ipsum vel sodales convallis, nisl lacus pulvinar massa, ac elementum orci orci at enim. Nulla mattis, ante non gravida viverra, ante nulla laoreet massa, id molestie ipsum lorem eget quam. Sed semper molestie interdum. Sed eu nunc sed diam elementum laoreet non nec velit. Fusce purus ante, blandit sed porttitor vitae, vulputate id odio. Fusce id nisl in lectus posuere volutpat. Aliquam ut ipsum
+				</p>
+				<form action="index.html">
+					<label for="name">
+						<input type="text" id="name" value="Full Name" onblur="this.value=!this.value?'Full Name':this.value;" onfocus="this.select()" onclick="this.value='';">
+						Enter your full name here.
+					</label>
+					<label for="email">
+						<input type="text" id="email" value="Email Address" onblur="this.value=!this.value?'Email Address':this.value;" onfocus="this.select()" onclick="this.value='';">
+						Enter your email address here.
+					</label>
+					<label for="subject">
+						<input type="text" id="subject" value="Subject" onblur="this.value=!this.value?'Subject':this.value;" onfocus="this.select()" onclick="this.value='';">
+						Enter the Subject message here.
+					</label>
+					<label for="message">
+						<textarea name="message" id="message" cols="30" rows="10" onblur="this.value=!this.value?'Message':this.value;" onfocus="this.select()" onclick="this.value='';">Message</textarea>
+						<span>Enter your Message here.</span>
+					</label>
+					<label for="subscribe" class="subscribe">
+						<input type="checkbox" id="subscribe">
+						Subscribe to newsletter
+					</label>
+					<label for="agree" class="agree">
+						<input type="checkbox" id="agree">
+						I agree to the Terms and Conditions
+					</label>
+					<input type="submit" value="" id="submit">
+				</form>
 			</div>
 		</div>
 		<div class="footer">

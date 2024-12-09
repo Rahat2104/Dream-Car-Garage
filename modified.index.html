@@ -184,109 +184,116 @@
 			<li>I did not use wordpress or Wix att all. I learnt and played around with CSS and JS Functions only. My website does not contain any important content. I solely focused on modifying existing CSS and Added new CSS and JS functions to be functional.</li>
 		</ul>
 	</div>
-
-	<div id="greatChoicePopup">
-		<h3 style="color: #2a9d8f; font-size: 24px;">🎉 Great Choice! 🎉</h3>
-		<p style="font-size: 16px; color: #555;">Now, Let's enjoy my dream car adventure!</p>
-	</div>
-
 	<div class="page">
 		<div class="header">
 			<a href="index.html" id="logo"><img src="images/Dream_Logo_SCALED.webp" alt="Dream Car Garage Logo"></a>
+			<ul>
+				<li><a href="modified.index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="news.html">News</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
 		</div>
-		<div class="body">
-			<div class="content">
-				<h1>Fall in love with cars!</h1>
-				<iframe width="640" height="360" src="https://www.youtube.com/embed/nKhtT3w8DUs" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+
+		<div id="greatChoicePopup">
+			<h3 style="color: #2a9d8f; font-size: 24px;">🎉 Great Choice! 🎉</h3>
+			<p style="font-size: 16px; color: #555;">Now, Let's enjoy my dream car adventure!</p>
+		</div>
+
+		
+			<div class="body">
+				<div class="content">
+					<h1>Fall in love with cars!</h1>
+					<iframe width="640" height="360" src="https://www.youtube.com/embed/nKhtT3w8DUs" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+					<p>
+						At Dream Automotive, we celebrate the art and engineering behind the world’s most breathtaking vehicles. From sleek sports cars to powerful classics, every model tells a story of passion and innovation.
+					</p>
+					<p>
+						Explore our curated collection and let your love for cars ignite your imagination. Whether you’re a car enthusiast or a casual admirer, there's something here for everyone to enjoy! I have added a gallery below, which cosists of my top 10 favourite cars! Give it a check. I hope you like it!
+					</p>
+				</div>
+			</div>
+
+			<!-- Button to Show Gallery -->
+			<button id="showGalleryButton" onclick="showGallery()">Gallery</button>
+
+			<!-- Gallery Section -->
+			<div class="gallery">
+				<img src="images/car1.jpg" alt="Car 1" class="active" data-name="Dodge Challenger">
+				<img src="images/car2.jpeg" alt="Car 2" data-name="Chevrolet Camaro">
+				<img src="images/car3.jpeg" alt="Car 3" data-name="Koenigsegg Jesko">
+				<img src="images/car4.webp" alt="Car 4" data-name="Ferrari LaFerrari">
+				<img src="images/car5.jpg" alt="Car 5" data-name="Lexus LFA">
+				<img src="images/car6.webp" alt="Car 6" data-name="McLaren P1">
+				<img src="images/car7.jpg" alt="Car 7" data-name="Mustang 1967">
+				<img src="images/car8.jpeg" alt="Car 8" data-name="Nissan GTR-35">
+				<img src="images/car9.jpeg" alt="Car 9" data-name="Supra Mk-5">
+				<img src="images/car10.jpg" alt="Car 10" data-name="BMW M5 Competition">
+				<div id="carName"></div>
+				<div class="gallery-controls">
+					<button onclick="nextImage()">Next Image</button>
+					<button onclick="closeGallery()">Close Gallery</button>
+				</div>
+			</div>
+
+			<div class="featured">
+				<h2>If you would like to know more about cars, this is for you!</h2>
 				<p>
-					At Dream Automotive, we celebrate the art and engineering behind the world’s most breathtaking vehicles. From sleek sports cars to powerful classics, every model tells a story of passion and innovation.
+					20 current supercars you should definitely know about! Click on 'VIEW MORE'
 				</p>
+				<a href="https://www.topgear.com/car-news/top-gear-advice/here-are-20-current-supercars-you-should-know-about" class="view-more-btn" target="_blank" rel="noopener noreferrer">View More</a>
+			</div>
+
+			<div class="footer">
 				<p>
-					Explore our curated collection and let your love for cars ignite your imagination. Whether you’re a car enthusiast or a casual admirer, there's something here for everyone to enjoy! I have added a gallery below, which cosists of my top 10 favourite cars! Give it a check. I hope you like it!
+					&#169; 2023. Dream Automotive | Student ID: [23229502], Name: Abrer Rahat Hossain
 				</p>
 			</div>
 		</div>
 
-		<!-- Button to Show Gallery -->
-		<button id="showGalleryButton" onclick="showGallery()">Gallery</button>
-
-		<!-- Gallery Section -->
-		<div class="gallery">
-			<img src="images/car1.jpg" alt="Car 1" class="active" data-name="Dodge Challenger">
-			<img src="images/car2.jpeg" alt="Car 2" data-name="Chevrolet Camaro">
-			<img src="images/car3.jpeg" alt="Car 3" data-name="Koenigsegg Jesko">
-			<img src="images/car4.webp" alt="Car 4" data-name="Ferrari LaFerrari">
-			<img src="images/car5.jpg" alt="Car 5" data-name="Lexus LFA">
-			<img src="images/car6.webp" alt="Car 6" data-name="McLaren P1">
-			<img src="images/car7.jpg" alt="Car 7" data-name="Mustang 1967">
-			<img src="images/car8.jpeg" alt="Car 8" data-name="Nissan GTR-35">
-			<img src="images/car9.jpeg" alt="Car 9" data-name="Supra Mk-5">
-			<img src="images/car10.jpg" alt="Car 10" data-name="BMW M5 Competition">
-			<div id="carName"></div>
-			<div class="gallery-controls">
-				<button onclick="nextImage()">Next Image</button>
-				<button onclick="closeGallery()">Close Gallery</button>
-			</div>
-		</div>
-
-		<div class="featured">
-			<h2>If you would like to know more about cars, this is for you!</h2>
-			<p>
-				20 current supercars you should definitely know about! Click on 'VIEW MORE'
-			</p>
-			<a href="https://www.topgear.com/car-news/top-gear-advice/here-are-20-current-supercars-you-should-know-about" class="view-more-btn" target="_blank" rel="noopener noreferrer">View More</a>
-		</div>
-
-		<div class="footer">
-			<p>
-				&#169; 2023. Dream Automotive | Student ID: [23229502], Name: Abrer Rahat Hossain
-			</p>
-		</div>
-	</div>
-
-	<script>
-		function showPopup() {
-			document.getElementById("popupContainer").style.display = "block";
-			document.getElementById("popupOverlay").style.display = "block";
-		}
-
-		function submitDreamCar() {
-			const dreamCar = document.getElementById("popupInput").value;
-			if (dreamCar.trim() === "") {
-				alert("Please enter a car name.");
-			} else {
-				document.getElementById("popupContainer").style.display = "none";
-				document.getElementById("popupOverlay").style.display = "none";
-
-				setTimeout(() => {
-					const greatChoicePopup = document.getElementById("greatChoicePopup");
-					greatChoicePopup.style.display = "block";
-					setTimeout(() => {
-						greatChoicePopup.style.display = "none";
-					}, 5000);
-				}, 500);
+		<script>
+			function showPopup() {
+				document.getElementById("popupContainer").style.display = "block";
+				document.getElementById("popupOverlay").style.display = "block";
 			}
-		}
 
-		let currentImageIndex = 0;
-		const images = document.querySelectorAll('.gallery img');
-		const carNameElement = document.getElementById('carName');
+			function submitDreamCar() {
+				const dreamCar = document.getElementById("popupInput").value;
+				if (dreamCar.trim() === "") {
+					alert("Please enter a car name.");
+				} else {
+					document.getElementById("popupContainer").style.display = "none";
+					document.getElementById("popupOverlay").style.display = "none";
 
-		function nextImage() {
-			images[currentImageIndex].classList.remove('active');
-			currentImageIndex = (currentImageIndex + 1) % images.length;
-			images[currentImageIndex].classList.add('active');
-			carNameElement.textContent = images[currentImageIndex].getAttribute('data-name');
-		}
+					setTimeout(() => {
+						const greatChoicePopup = document.getElementById("greatChoicePopup");
+						greatChoicePopup.style.display = "block";
+						setTimeout(() => {
+							greatChoicePopup.style.display = "none";
+						}, 5000);
+					}, 500);
+				}
+			}
 
-		function showGallery() {
-			document.querySelector('.gallery').style.display = 'block';
-			carNameElement.textContent = images[currentImageIndex].getAttribute('data-name');
-		}
+			let currentImageIndex = 0;
+			const images = document.querySelectorAll('.gallery img');
+			const carNameElement = document.getElementById('carName');
 
-		function closeGallery() {
-			document.querySelector('.gallery').style.display = 'none';
-		}
-	</script>
+			function nextImage() {
+				images[currentImageIndex].classList.remove('active');
+				currentImageIndex = (currentImageIndex + 1) % images.length;
+				images[currentImageIndex].classList.add('active');
+				carNameElement.textContent = images[currentImageIndex].getAttribute('data-name');
+			}
+
+			function showGallery() {
+				document.querySelector('.gallery').style.display = 'block';
+				carNameElement.textContent = images[currentImageIndex].getAttribute('data-name');
+			}
+
+			function closeGallery() {
+				document.querySelector('.gallery').style.display = 'none';
+			}
+		</script>
 </body>
 </html>
