@@ -100,21 +100,28 @@
 					margin: 0 auto;
 				}
 
-			.gallery button {
-				background-color: #2a9d8f;
-				color: white;
-				padding: 10px 20px;
-				border: none;
-				border-radius: 5px;
-				cursor: pointer;
-				font-size: 16px;
-				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-				margin-top: 20px;
+		.gallery-controls button {
+			background-color: #2a9d8f;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+			margin: 10px;
+		}
+
+			.gallery-controls button:hover {
+				background-color: #e76f51;
 			}
 
-				.gallery button:hover {
-					background-color: #e76f51;
-				}
+		#carName {
+			font-size: 18px;
+			color: #555;
+			margin-top: 10px;
+			font-weight: bold;
+		}
 
 		#showGalleryButton {
 			margin-top: 50px;
@@ -133,6 +140,25 @@
 			#showGalleryButton:hover {
 				background-color: #e76f51;
 			}
+
+		.featured {
+			margin-top: 50px;
+			text-align: center;
+			background: #3a3a3a;
+			padding: 20px;
+			color: white;
+			border-radius: 10px;
+		}
+
+			.featured a {
+				color: #f95a5a;
+				text-decoration: none;
+				font-weight: bold;
+			}
+
+				.featured a:hover {
+					color: #e76f51;
+				}
 	</style>
 </head>
 <body onload="showPopup()">
@@ -151,23 +177,16 @@
 	<div class="page">
 		<div class="header">
 			<a href="index.html" id="logo"><img src="images/Dream_Logo_SCALED.webp" alt="Dream Car Garage Logo"></a>
-			<div class="featured">
-				<h2>Heaven for Car Enthusiasts!</h2>
-				<p>
-					20 current supercars you should definitely know about! Click on 'VIEW MORE'
-				</p>
-				<a href="https://www.topgear.com/car-news/top-gear-advice/here-are-20-current-supercars-you-should-know-about" class="view-more-btn" target="_blank" rel="noopener noreferrer">View More</a>
-			</div>
 		</div>
 		<div class="body">
 			<div class="content">
 				<h1>Fall in love with cars!</h1>
-				<iframe width="640" height="360" src="https://www.youtube.com/embed/nKhtT3w8DUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe width="640" height="360" src="https://www.youtube.com/embed/nKhtT3w8DUs" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 				<p>
-					At Dream Car Garage, we celebrate the art and engineering behind the world’s most breathtaking vehicles. From sleek sports cars to powerful classics, every model tells a story of passion and innovation.
+					At Dream Automotive, we celebrate the art and engineering behind the world’s most breathtaking vehicles. From sleek sports cars to powerful classics, every model tells a story of passion and innovation.
 				</p>
 				<p>
-					Explore our curated collection and let your love for cars ignite your imagination. Whether you’re a car enthusiast or a casual admirer, there's something here for everyone to enjoy!
+					Explore our curated collection and let your love for cars ignite your imagination. Whether you’re a car enthusiast or a casual admirer, there's something here for everyone to enjoy! I have added a gallery below, which cosists of my top 10 favourite cars! Give it a check. I hope you like it!
 				</p>
 			</div>
 		</div>
@@ -177,11 +196,29 @@
 
 		<!-- Gallery Section -->
 		<div class="gallery">
-			<img src="images/car1.jpg" alt="Car 1" class="active">
-			<img src="images/car2.jpg" alt="Car 2">
-			<img src="images/car3.jpg" alt="Car 3">
-			<img src="images/car4.jpg" alt="Car 4">
-			<button onclick="nextImage()">Next Image</button>
+			<img src="images/car1.jpg" alt="Car 1" class="active" data-name="Dodge Challenger">
+			<img src="images/car2.jpeg" alt="Car 2" data-name="Chevrolet Camaro">
+			<img src="images/car3.jpeg" alt="Car 3" data-name="Koenigsegg Jesko">
+			<img src="images/car4.webp" alt="Car 4" data-name="Ferrari LaFerrari">
+			<img src="images/car5.jpg" alt="Car 5" data-name="Lexus LFA">
+			<img src="images/car6.webp" alt="Car 6" data-name="McLaren P1">
+			<img src="images/car7.jpg" alt="Car 7" data-name="Mustang 1967">
+			<img src="images/car8.jpeg" alt="Car 8" data-name="Nissan GTR-35">
+			<img src="images/car9.jpeg" alt="Car 9" data-name="Supra Mk-5">
+			<img src="images/car10.jpg" alt="Car 10" data-name="BMW M5 Competition">
+			<div id="carName"></div>
+			<div class="gallery-controls">
+				<button onclick="nextImage()">Next Image</button>
+				<button onclick="closeGallery()">Close Gallery</button>
+			</div>
+		</div>
+
+		<div class="featured">
+			<h2>If you would like to know more about cars, this is for you!</h2>
+			<p>
+				20 current supercars you should definitely know about! Click on 'VIEW MORE'
+			</p>
+			<a href="https://www.topgear.com/car-news/top-gear-advice/here-are-20-current-supercars-you-should-know-about" class="view-more-btn" target="_blank" rel="noopener noreferrer">View More</a>
 		</div>
 
 		<div class="footer">
@@ -217,15 +254,22 @@
 
 		let currentImageIndex = 0;
 		const images = document.querySelectorAll('.gallery img');
+		const carNameElement = document.getElementById('carName');
 
 		function nextImage() {
 			images[currentImageIndex].classList.remove('active');
 			currentImageIndex = (currentImageIndex + 1) % images.length;
 			images[currentImageIndex].classList.add('active');
+			carNameElement.textContent = images[currentImageIndex].getAttribute('data-name');
 		}
 
 		function showGallery() {
 			document.querySelector('.gallery').style.display = 'block';
+			carNameElement.textContent = images[currentImageIndex].getAttribute('data-name');
+		}
+
+		function closeGallery() {
+			document.querySelector('.gallery').style.display = 'none';
 		}
 	</script>
 </body>
